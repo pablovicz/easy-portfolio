@@ -4,8 +4,8 @@ import { AboutMeSection } from "../components/sections/AboutMeSection";
 import { SkillsSection } from "../components/sections/SkillsSection";
 import { ProjectsSection } from "../components/sections/ProjectsSection";
 import { NavigationProvider } from "../service/provider/NavigationProvider";
-import { GoToInitButton } from "../components/RapidNavigationButton/GoToInitButton";
-import { GoToEndButton } from "../components/RapidNavigationButton/GoToEndButton";
+import { GoToInitButton } from "../components/Navigation/GoToInitButton";
+import { GoToEndButton } from "../components/Navigation/GoToEndButton";
 import { ProfessionalExperienceSection } from "../components/sections/ProfessionalExperienceSection";
 import { AcademicBackgroundSection } from "../components/sections/AcademicBackgroundSection";
 import { CoursesAndCertificationsSection } from "../components/sections/CoursesAndCertificationsSection";
@@ -43,8 +43,8 @@ export function Home() {
 
                 </Flex>
 
-                <GoToInitButton />
-                <GoToEndButton />
+                {/* <GoToInitButton /> */}
+                {/* <GoToEndButton /> */}
             </NavigationProvider>
         </Flex>
     );

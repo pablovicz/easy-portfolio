@@ -47,6 +47,7 @@ export function Navbar() {
 
     const { selectedSection } = useContext(NavigationContext);
 
+    
 
     return (
         <HStack spacing="8">
@@ -58,6 +59,7 @@ export function Navbar() {
                     smooth={true}
                     offset={-150}
                     duration={1000}
+                    key={`link-to-${option.sectionName}`}
                 >
                     <Button
                         variant="unstyled"

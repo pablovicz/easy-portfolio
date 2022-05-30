@@ -1,5 +1,4 @@
-import { Button, HStack, Icon, IconButton, Link, Menu, MenuButton, MenuItem, MenuList, Tooltip, useToast } from "@chakra-ui/react";
-import { useState } from "react";
+import { Button, HStack, Icon, Link, Menu, MenuButton, MenuItem, MenuList, useToast } from "@chakra-ui/react";
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { MdKeyboardArrowDown, MdOutlineEmail } from 'react-icons/md';
 
@@ -59,45 +58,41 @@ export function Contacts() {
                 </MenuButton>
 
                 <MenuList bgColor="gray.700" border="none" color='gray.100'>
-                    {contacts.map(contact => (
-                        <>
-                            {contact.label === 'Email' ? (
-                                <MenuItem
-                                    key={contact.label}
-                                    _hover={{ bgColor: 'gray.800', color: 'app.primary' }}
-                                    _focus={{ bgColor: 'gray.800', color: 'app.primary' }}
-                                    icon={<Icon as={contact.icon} fontSize="32" />}
-                                    onClick={() => handleEmailCopy(contact.link)}
-                                >
-                                    {contact.label}
-                                </MenuItem>
-                            ) : (
-                                <Link
-                                    href={contact.link}
-                                    key={contact.label}
-                                    isExternal
-                                    _hover={{ bgColor: 'gray.800', color: 'app.primary' }}
-                                >
-                                    <MenuItem
-                                        
-                                        _hover={{ bgColor: 'gray.800', color: 'app.primary' }}
-                                        _focus={{ bgColor: 'gray.800', color: 'app.primary' }}
-                                        icon={<Icon as={contact.icon} fontSize="32" />}
-                                    >
+                    {contacts.slice(0, 2).map(contact => (
 
-                                        {contact.label}
+                        <Link
+                            href={contact.link}
+                            key={contact.label}
+                            isExternal
+                            _hover={{ bgColor: 'gray.800', color: 'app.primary' }}
+                        >
+                            <MenuItem
 
-                                    </MenuItem>
-                                </Link>
-                            )}
-                        </>
+                                _hover={{ bgColor: 'gray.800', color: 'app.primary' }}
+                                _focus={{ bgColor: 'gray.800', color: 'app.primary' }}
+                                icon={<Icon as={contact.icon} fontSize="32" />}
+                            >
+
+                                {contact.label}
+
+                            </MenuItem>
+                        </Link>
                     ))}
+                    <MenuItem
+                        key={contacts[2].label}
+                        _hover={{ bgColor: 'gray.800', color: 'app.primary' }}
+                        _focus={{ bgColor: 'gray.800', color: 'app.primary' }}
+                        icon={<Icon as={contacts[2].icon} fontSize="32" />}
+                        onClick={() => handleEmailCopy(contacts[2].link)}
+                    >
+                        {contacts[2].label}
+                    </MenuItem>
 
                 </MenuList>
             </Menu>
 
 
-        </HStack>
+        </HStack >
 
     );
 }

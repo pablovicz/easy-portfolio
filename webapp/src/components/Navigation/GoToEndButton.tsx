@@ -7,15 +7,8 @@ import { RenderByCondition } from "../Others/RenderByCondition";
 
 export function GoToEndButton() {
 
-
     const [isHovered, setIsHovered] = useState(false);
     const { isLastSection, scrollToBottom, sectionIndex } = useContext(NavigationContext);
-
-
-
-
-
-
 
     return (
         <RenderByCondition condition={!isLastSection || sectionIndex <= 3}>

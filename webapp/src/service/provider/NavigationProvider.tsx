@@ -46,6 +46,12 @@ export function NavigationProvider({ children }: NavigationProviderProps) {
         setSelectedSection(fullSections[fullSections.length - 1].sectionName)
     };
 
+    useEffect(() => {
+        document.getElementById(`link-to-${selectedSection}`)?.click;
+    }, [selectedSection]);
+
+    document.getElementById(`link-to-${selectedSection}`)?.addEventListener('click', () => setSelectedSection(selectedSection), false);
+
     return (
         <NavigationContext.Provider value={{ selectedSection, setSelectedSection, isLastSection, isFirstSection, scrollToTop, scrollToBottom, sectionIndex }}>
             {children}
