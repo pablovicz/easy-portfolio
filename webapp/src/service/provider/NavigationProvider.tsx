@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useMemo, useState } from "react";
+import { createContext, ReactNode, useEffect, useMemo, useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
 import { fullSections } from "../../components/Navbar";
 
@@ -36,12 +36,12 @@ export function NavigationProvider({ children }: NavigationProviderProps) {
         return fullSections.map(s => (s.sectionName)).indexOf(selectedSection)
     }, [selectedSection])
 
-    const scrollToTop = () => {
+    function scrollToTop() {
         scroll.scrollToTop();
         setSelectedSection(fullSections[0].sectionName)
     };
 
-    const scrollToBottom = () => {
+    function scrollToBottom() {
         scroll.scrollToBottom();
         setSelectedSection(fullSections[fullSections.length - 1].sectionName)
     };
@@ -52,4 +52,4 @@ export function NavigationProvider({ children }: NavigationProviderProps) {
         </NavigationContext.Provider>
     );
 
- }
+}

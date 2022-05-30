@@ -12,11 +12,6 @@ export function GoToInitButton() {
     const { isFirstSection, sectionIndex, scrollToTop } = useContext(NavigationContext);
 
 
-
-
-
-
-
     return (
         <RenderByCondition condition={!isFirstSection || sectionIndex > 3}>
             <Flex

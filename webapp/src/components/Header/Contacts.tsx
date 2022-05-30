@@ -74,11 +74,12 @@ export function Contacts() {
                             ) : (
                                 <Link
                                     href={contact.link}
+                                    key={contact.label}
                                     isExternal
                                     _hover={{ bgColor: 'gray.800', color: 'app.primary' }}
                                 >
                                     <MenuItem
-                                        key={contact.label}
+                                        
                                         _hover={{ bgColor: 'gray.800', color: 'app.primary' }}
                                         _focus={{ bgColor: 'gray.800', color: 'app.primary' }}
                                         icon={<Icon as={contact.icon} fontSize="32" />}
