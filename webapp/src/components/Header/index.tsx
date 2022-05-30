@@ -1,8 +1,12 @@
 import { Flex, Text } from "@chakra-ui/react";
-import {Contacts} from './Contacts';
+import { useContext } from "react";
+import { NavigationContext } from "../../service/provider/NavigationProvider";
+import { Navbar } from "../Navbar";
 
 
 export function Header() {
+
+    const {selectedSection, setSelectedSection} = useContext(NavigationContext);
 
     return (
         <Flex
@@ -11,6 +15,9 @@ export function Header() {
             bgColor="gray.900"
             align="center"
             justify="center"
+            mb="10"
+            position="fixed"
+            top="0"
         >
             <Flex
                 flexDir="row"
@@ -20,11 +27,10 @@ export function Header() {
                 pr="12"
                 w="100%"
                 h="100%"
-                maxW={1480 }
-                
+                maxW={1480}
             >
-                <Text fontWeight="bold" fontSize="20" textAlign="start" color="gray.100">Pablo Woinarovicz Ramos</Text>
-                <Contacts />
+                <Text fontWeight="bold" fontSize="24" textAlign="start" color="app.primary">Pablo Woinarovicz Ramos</Text>
+                <Navbar selectedSelection={selectedSection} onCallback={setSelectedSection} />
             </Flex>
         </Flex>
     );
